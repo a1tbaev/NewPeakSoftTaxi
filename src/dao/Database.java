@@ -38,7 +38,7 @@ public class Database {
     }
 
     public Set<Taxi> getTaxiList() {
-        return taxiList;
+        return  taxiList;
     }
 
     public void setTaxiList(Set<Taxi> taxiList) {

@@ -34,7 +34,7 @@ public class License {
     }
 
     public void setExpirationDate(LocalDate expirationDate) {
-        this.expirationDate = expirationDate;
+        this.expirationDate  = expirationDate;
     }
 
     @Override
