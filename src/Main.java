@@ -19,11 +19,5 @@ public class Main {
                 new Client(13L,"Baytik Taalaybekov",LocalDate.of(2002,4,12),
                         "0990128880",new BigDecimal(3000))));
 
-
-
-
-
-
-
     }
 }
