@@ -20,6 +20,7 @@ public class Database {
         this.drivers = drivers;
         this.taxiList = taxiList;
     }
+    public Database(){};
 
     public Set<Client> getClients() {
         return clients;
