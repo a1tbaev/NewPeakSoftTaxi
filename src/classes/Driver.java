@@ -13,4 +13,6 @@ public class Driver {
     private License license;
     private BigDecimal money;
     private Taxi taxi;
+
+    private String test;
 }
