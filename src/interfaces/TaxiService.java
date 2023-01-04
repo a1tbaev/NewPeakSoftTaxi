@@ -12,5 +12,5 @@ public interface TaxiService {
     List<Taxi> findByInitialLetter(String model);
     Map<TaxiType, List<Taxi>> grouping();
     List<Taxi> filterByTaxiType(String taxiType);
-    void update(Long id);
+    void  update(Long id);
 }
