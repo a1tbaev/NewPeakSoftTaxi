@@ -91,28 +91,48 @@ public class ClientServiceImpl implements ClientService {
         int number =scanner.nextInt();
         switch (number) {
             case 1:
-                database.getClients().stream().sorted(Comparator.comparing(Client::getId)).findAny().get();
+                System.out.println(database.getClients().stream().
+                        sorted(Comparator.comparing(Client::getId)).findAny());
                 break;
             case 2:
-                database.getClients().stream().sorted(Comparator.comparing(Client::getId).reversed()).
-                        findAny().get();
+                System.out.println(database.getClients().stream().
+                        sorted(Comparator.comparing(Client::getId).reversed()).
+                        findAny());
                 break;
         }
         System.out.println("Sort by fullName");
         switch (number) {
             case 1:
-                database.getClients().stream().sorted(Comparator.comparing(Client::getFullName)).findAny().get();
+                System.out.println(database.getClients().stream().
+                        sorted(Comparator.comparing(Client::getFullName)).findAny());
                 break;
             case 2:
-                database.getClients().stream().sorted(Comparator.comparing(Client::getFullName).reversed()).findAny().get();
+                System.out.println(database.getClients().stream().
+                        sorted(Comparator.comparing(Client::getFullName)
+                        .reversed()).findAny());
                 break;
         }
         System.out.println("Sort by date of birth");
         switch (number){
             case 1:
-                database.getClients().stream().sorted(Comparator.comparing(Client::getDateOfBirth)).findAny().get();
+                System.out.println(database.getClients().stream().
+                        sorted(Comparator.comparing(Client::getDateOfBirth)).findAny());
                 break;
             case 2:
+                System.out.println(database.getClients().stream().
+                        sorted(Comparator.comparing(Client::getDateOfBirth).reversed()).findAny());
+                break;
+        }
+        System.out.println("Sort by money");
+        switch (number){
+            case 1:
+                System.out.println(database.getClients().stream().
+                        sorted(Comparator.comparing(Client::getMoney)).findAny());
+                break;
+            case 2:
+                System.out.println(database.getClients().stream().
+                        sorted(Comparator.comparing(Client::getMoney).reversed()));
+                break;
         }
 
 
