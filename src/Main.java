@@ -137,12 +137,7 @@ public class Main {
                     break;
                 case 21: tax.update(1L);
                      break;
-
             }
         }
-
-
-
-
     }
 }
