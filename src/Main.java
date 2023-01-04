@@ -135,7 +135,7 @@ public class Main {
                 case 20:
                     System.out.println(tax.filterByTaxiType("Fit"));
                     break;
-                case 21: tax.update(1L);
+                case 21:  tax.update(1L);
                      break;
             }
         }
