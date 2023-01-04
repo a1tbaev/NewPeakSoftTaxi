@@ -14,5 +14,5 @@ public class Driver {
     private BigDecimal money;
     private Taxi taxi;
 
-    private String test;
+
 }
