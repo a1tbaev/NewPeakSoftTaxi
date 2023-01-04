@@ -79,45 +79,68 @@ public class Main {
             switch (scanner.nextInt()){
                 case 1:
                     System.out.println(cl.addClient(client));
+                    break;
                 case 2:
                     System.out.println(cl.addClient(clients));
+                    break;
                 case 3:
                     System.out.println(cl.getClientByName("Baytik"));
+                    break;
                 case 4:
                     System.out.println(cl.removeClientById(2L));
+                    break;
                 case 5:
                     System.out.println(cl.orderTaxi(2L, "COMFORT"));
+                    break;
                 case 6:
                     System.out.println(cl.getClientAge());
+                    break;
                 case 7: cl.universalSorting("word");
+                     break;
                 case 8:
                     System.out.println(dri.add(driver));
+                    break;
                 case 9:
                     System.out.println(dri.add(drivers));
+                    break;
                 case 10:
                     System.out.println(dri.findById(1L));
+                    break;
                 case 11:
                     System.out.println(dri.findByName("Baytik"));
+                    break;
                 case 12:
                     System.out.println(dri.assignTaxiToDriver(1L, 1L));
+                    break;
                 case 13:
                     System.out.println(dri.changeTaxiOrDriver(1L, 2L));
+                    break;
                 case 14:
                     System.out.println(dri.getDriverByTaxiModel("Mers"));
+                    break;
                 case 15: dri.update("Baytik");
+                    break;
                 case 16:
                     System.out.println(tax.add(taxi));
+                    break;
                 case 17:
                     System.out.println(tax.add(listss));
+                    break;
                 case 18:
                     System.out.println(tax.findByInitialLetter("B"));
+                    break;
                 case 19:
                     System.out.println(tax.grouping());
+                    break;
                 case 20:
                     System.out.println(tax.filterByTaxiType("Fit"));
+                    break;
                 case 21: tax.update(1L);
+                     break;
+
             }
         }
+
 
 
 
