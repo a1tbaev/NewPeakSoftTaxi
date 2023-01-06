@@ -92,7 +92,7 @@ public class ClientServiceImpl implements ClientService {
         switch (number) {
             case 1:
                 System.out.println(database.getClients().stream().
-                        sorted(Comparator.comparing(Client::getId)).findAny());
+                        sorted(Comparator.comparing(Client::getId)).toList());
                 break;
             case 2:
                 System.out.println(database.getClients().stream().

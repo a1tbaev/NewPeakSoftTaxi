@@ -24,6 +24,7 @@ public class Main {
                 new Taxi(1L,"Fit","5555","White",LocalDate.of(2011,5,15),TaxiType.COMFORT),
                 new Taxi(2L,"Mers","1111","Black",LocalDate.of(2012,4,10),TaxiType.BUSINESS)));
         Taxi taxi = new Taxi(3L,"Audi","0001","Green",LocalDate.of(2015,6,11),TaxiType.STANDARD);
+
         List<Client>clients=new ArrayList<>(Arrays.asList(
                 new Client(1L,"Kanykei Askarbekova",LocalDate.of(2003,3,18),
                         "0990128880",new BigDecimal(1000)),
@@ -135,7 +136,8 @@ public class Main {
                 case 20:
                     System.out.println(tax.filterByTaxiType("Fit"));
                     break;
-                case 21:  tax.update(1L);
+                case 21:
+                    tax.update(1L);
                     break;
             }
         }

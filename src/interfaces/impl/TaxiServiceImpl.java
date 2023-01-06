@@ -10,42 +10,58 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class TaxiServiceImpl implements TaxiService {
-    List<Taxi>taxis=new ArrayList<>();
+    Database database = new Database();
+
+    public Database getDatabase() {
+        return database;
+    }
+
+    public void setDatabase(Database database) {
+        this.database = database;
+    }
 
     @Override
     public StringBuilder add(Taxi taxi) {
-       this.taxis.add(taxi);
+       this.database.getTaxiList().add(taxi);
         return new StringBuilder("Successfully added!!!");
     }
 
     @Override
     public StringBuilder add(List<Taxi> taxis) {
-        this.taxis.addAll(taxis);
+        this.database.getTaxiList().addAll(taxis);
         Database database= new Database();
         taxis.forEach(database.taxiList::remove);
-        database.taxiList.addAll(this.taxis);
+        database.taxiList.addAll(this.database.getTaxiList());
         return new StringBuilder("Successfully added taxis!!!");
     }
 
     @Override
     public List<Taxi> findByInitialLetter(String model) {
-        return taxis.stream().filter(taxi -> taxi.getModel().startsWith(model)).toList();
+        List<Taxi>taxis =new ArrayList<>();
+        for (Taxi taxi: database.getTaxiList()) {
+            if (taxi.getModel().equals(String.valueOf(model))){
+                taxis.add(taxi);
+            }
+
+        }
+        return taxis;
     }
 
     @Override
     public Map<TaxiType, List<Taxi>> grouping() {
-        return taxis.stream().collect(Collectors.groupingBy(Taxi::getTaxiType));
+        return database.getTaxiList().stream().collect(Collectors.groupingBy(Taxi::getTaxiType));
     }
 
     @Override
     public List<Taxi> filterByTaxiType(String taxiType) {
-        return taxis.stream().filter(taxi -> taxi.getTaxiType().name().equals(taxiType)).toList();
+        List<Taxi>taxiList = database.getTaxiList().stream().filter(taxi -> taxi.getTaxiType().name().equals(taxiType)).toList();
+        return taxiList;
     }
 
     @Override
     public void update(Long id) {
         Scanner scanner = new Scanner(System.in);
-        for (Taxi taxi : taxis) {
+        for (Taxi taxi : database.getTaxiList()) {
             if (Objects.equals(taxi.getId(), id)){
                 System.out.println("Write taxis model: ");
                 taxi.setModel(scanner.nextLine());
@@ -68,7 +84,7 @@ public class TaxiServiceImpl implements TaxiService {
                     }
                 }
             }
-        }for (Taxi taxi : taxis) {
+        }for (Taxi taxi : database.getTaxiList()) {
             if (Objects.equals(taxi.getId(), id)){
                 System.out.println(taxi);
             }
